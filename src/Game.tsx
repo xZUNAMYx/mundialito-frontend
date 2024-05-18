@@ -1,4 +1,4 @@
-import { Card, IconButton, List, ListItem, ListItemButton, ListItemText, Stack, Typography, colors } from "@mui/material";
+import { Card, IconButton, List, ListItem, ListItemButton, ListItemText, Stack, Typography } from "@mui/material";
 import { useQuestionStore } from "./store/questions.store";
 import { type Question as QuestionType} from './types';
 import { ArrowBackIosNew, ArrowForwardIos } from "@mui/icons-material";

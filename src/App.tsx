@@ -1,4 +1,4 @@
-import { Container, Stack, Typography } from '@mui/material'
+import { Container, Stack } from '@mui/material'
 
 import './App.css'
 import { Start } from './Start';
