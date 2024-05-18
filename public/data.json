@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "question": "Carlos _______ a good man",
+      "code": "Select the correct",
+      "answers": [
+        "Is",
+        "Are",
+        "Am",
+        "Do"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 2,
+      "question": "2222",
+      "code": "Select the correct",
+      "answers": [
+        "Is",
+        "Are",
+        "Am",
+        "Do"
+      ],
+      "correctAnswer": 0
+    },
+    {
+      "id": 3,
+      "question": "333",
+      "code": "Select the correct",
+      "answers": [
+        "Is",
+        "Are",
+        "Am",
+        "Do"
+      ],
+      "correctAnswer": 0
+    }
+  ]
