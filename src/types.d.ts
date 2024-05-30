@@ -7,3 +7,10 @@ export interface Question {
     userSelectedAnswer?: number,
     isCorrectUserAnswer?: boolean,
 }
+
+export interface Team {
+    id: number,
+    name: String,
+    points: number,
+    players: string[],
+}

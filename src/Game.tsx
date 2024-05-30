@@ -1,5 +1,5 @@
 import { Card, IconButton, List, ListItem, ListItemButton, ListItemText, Stack, Typography } from "@mui/material";
-import { useQuestionStore } from "./store/questions.store";
+import { useQuestionStore } from "./stores/questions.store";
 import { type Question as QuestionType} from './types';
 import { ArrowBackIosNew, ArrowForwardIos } from "@mui/icons-material";
 import { Footer } from "./Footer";
@@ -51,6 +51,29 @@ const Question = ({ info } : { info: QuestionType }) => {
                 ))}
             </List>
         </Card>
+        // <div>
+        //     <Typography variant="h5" sx={{textAlign: 'center', fontWeight: 'bold'}}>
+        //         { info.question}
+        //     </Typography>
+        //     <hr />
+            
+        //     {info.code}
+
+        //     <List sx={{ bgcolor: 'white' }} disablePadding >
+        //     <hr />
+        //         { info.answers.map(( answer, index) =>(
+        //             <ListItem key={ index } disablePadding divider sx={{ backgroundColor: 'white'}}>
+        //                 <ListItemButton 
+        //                     disabled={info.userSelectedAnswer != null} //al desactivar el boton
+        //                     onClick={ createHandleClick(index) }
+        //                     sx={{ backgroundColor: getBackGroundColor(info, index) }}
+        //                 >
+        //                     <ListItemText primary={ answer } sx={{ textAlign: 'center' }} />
+        //                 </ListItemButton>
+        //             </ListItem>
+        //         ))}
+        //     </List>
+        // </div>
     )
 }
 

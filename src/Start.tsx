@@ -1,5 +1,5 @@
 import { Button } from "@mui/material"
-import { useQuestionStore } from "./store/questions.store"
+import { useQuestionStore } from "./stores/questions.store"
 
 const LIMIT_QUESTIONS = 10;
 
@@ -12,6 +12,7 @@ export const Start = () => {
 
     return (
         <Button onClick={ handleClick } variant="contained" >
+            {/* Para hacer el feth de las preguntas */}
             ¡Empezar!
         </Button>
     )
