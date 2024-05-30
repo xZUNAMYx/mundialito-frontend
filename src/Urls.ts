@@ -1,1 +1,1 @@
-export const baseUrl = `https://mundialito-backend-qfvn.onrender.com`
+export const baseUrl = `https://mundialito-backend-qfvn.onrender.com/api`
