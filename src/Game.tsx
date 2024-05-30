@@ -25,6 +25,8 @@ const Question = ({ info } : { info: QuestionType }) => {
 
     const createHandleClick = (answerIndex: number) => () =>{
         selectAnswer(info.id, answerIndex);
+        // @ts-ignore
+        getBackGroundColor(info)
     }
 
     return (
