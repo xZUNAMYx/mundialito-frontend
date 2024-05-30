@@ -16,6 +16,10 @@ const getBackGroundColor = (info: QuestionType, index: number) => {
     if(index === correctAnswer ) return '#2D9BD8';
     //Si esta es la seleccion del usuario pero no es correcta
     if(index === userSelectedAnswer) return 'red';
+
+
+
+    if(index === userSelectedAnswer && userSelectedAnswer !== correctAnswer) return 'red';
     //sino es ninguna de las anteriores
 
     return 'transparent';
