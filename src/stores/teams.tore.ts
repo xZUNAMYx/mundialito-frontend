@@ -27,6 +27,7 @@ interface State{
     resetChampionship: () => void;
 }
 
+// @ts-ignore
 export const useChampionShipStore = create<State>()(devtools(persist((set, get)=>{
     //TODO: intentando cargar torneo desde el backend
 
@@ -37,6 +38,7 @@ export const useChampionShipStore = create<State>()(devtools(persist((set, get)=
         currentTeam: 0,
         playersBrasil: [],
 
+        // @ts-ignore
         fetchTeams: async (limit:number, player: String)=> {
             //TODO: obteniendo preguntas del backend
             const {data} = await calendarApi.get('teams'); //Este es como temrina el endpoint

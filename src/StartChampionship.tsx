@@ -1,6 +1,6 @@
 import { Button, TextField } from "@mui/material";
 import { useChampionShipStore } from "./stores/teams.tore";
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 const LIMIT_TEAMS = 2;
 
@@ -12,8 +12,8 @@ export const StartChampionship = () => {
     const fetchPlayersArgentina = useChampionShipStore( state=> state.fetchPlayersArgentina );
     const [inputValue, setInputValue] = useState('');
     
-    const teams = useChampionShipStore( state=> state.teams ); 
-    const nombreEquipo = useChampionShipStore( state=> state.nombreEquipo ); 
+    // const teams = useChampionShipStore( state=> state.teams ); 
+    // const nombreEquipo = useChampionShipStore( state=> state.nombreEquipo ); 
 
     const handleInputChange = (event: any) => {
         setInputValue(event.target.value);

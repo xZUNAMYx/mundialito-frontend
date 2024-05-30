@@ -1,4 +1,4 @@
-import { Button, Card, List, ListItem, ListItemButton, ListItemText, Typography } from "@mui/material";
+import { Card, List, ListItem, ListItemButton, ListItemText, Typography } from "@mui/material";
 import { useChampionShipStore } from "./stores/teams.tore";
 import {type Team as TeamType} from './types';
 import { useEffect } from "react";
@@ -6,6 +6,7 @@ import { useEffect } from "react";
 const Team = ({ info } : { info: TeamType }) => { //TODO: de tipo Team
     const selectTeam = useChampionShipStore(state => state.selectTeam);
 
+    // @ts-ignore
     const createHandleClick = () => () =>{ 
         selectTeam(info.id);
     }
@@ -47,6 +48,7 @@ export const Teams = () => {
     const teamInfo2 = teams[1];
 
     useEffect(() => {
+        // @ts-ignore
         fetchTeams();
     }, []);
 

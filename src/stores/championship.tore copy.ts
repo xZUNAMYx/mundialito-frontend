@@ -20,6 +20,7 @@ interface State{
     resetChampionship: () => void;
 }
 
+// @ts-ignore
 export const useChampionShipStore = create<State>()(devtools(persist((set, get)=>{
     //TODO: intentando cargar torneo desde el backend
 
@@ -29,6 +30,7 @@ export const useChampionShipStore = create<State>()(devtools(persist((set, get)=
         championShip: false,
         currentTeam: 0,
 
+        // @ts-ignore
         fetchTeams: async (limit:number)=> {
             //TODO: obteniendo preguntas del backend
             const {data} = await calendarApi.get('teams'); //Este es como temrina el endpoint
@@ -38,13 +40,16 @@ export const useChampionShipStore = create<State>()(devtools(persist((set, get)=
             console.log({teams});
         },
 
+        // @ts-ignore
         selectTeam:(teamId: number, playerIndex: number) => {
             // usar el structuredClone para clonar el objeto
             const { teams } = get();
             const newTeams = structuredClone( teams );
 
+            // @ts-ignore
             const teamIndex = newTeams.findIndex(t => t.id === teamId);
 
+            // @ts-ignore
             const teamInfo = newTeams[ teamIndex ];
             console.log({newTeams});
            

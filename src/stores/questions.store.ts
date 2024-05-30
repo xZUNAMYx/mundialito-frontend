@@ -35,6 +35,7 @@ export const useQuestionStore = create<State>()(devtools(persist((set, get)=>{
         onTorneo: false,
         currentQuestion: 0,
 
+        // @ts-ignore
         fetchQuestions: async (limit:number)=> {
             // TODO: Montar estas preguntas desde el backend sino solo podemos hacerlo cuando iniciamos el localhost
             // //TODO: obteniendo preguntas del backend

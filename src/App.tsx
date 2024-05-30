@@ -10,7 +10,6 @@ import { useChampionShipStore } from './stores/teams.tore';
 
 function App() {
   const questions = useQuestionStore(state => state.questions);
-  const teams = useQuestionStore( state => state.teams);
   const torneo = useChampionShipStore(state => state.onTorneo);
 
   console.log(questions);
