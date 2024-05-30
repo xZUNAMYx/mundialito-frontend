@@ -1,0 +1,1 @@
+export const baseUrl = `https://mundialito-backend-qfvn.onrender.com`
