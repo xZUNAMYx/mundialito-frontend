@@ -8,9 +8,13 @@ import { StartChampionship } from './StartChampionship';
 import { Teams } from './Teams';
 import { useChampionShipStore } from './stores/teams.tore';
 
+import logoMundialito from '../src/assets/logoMundialito.jpeg';
+
+
 function App() {
   const questions = useQuestionStore(state => state.questions);
   const torneo = useChampionShipStore(state => state.onTorneo);
+
 
   console.log(questions);
 
@@ -24,7 +28,7 @@ function App() {
         <Stack direction='row' gap={1} alignItems='center' justifyContent='center'>
 
           {/* TODO: Colocar aqui el logo del mundiatito */}
-          <img src="./src/assets/recortado logo mundialito.jpeg" alt="" width={'200px'} />
+          <img src={ logoMundialito } alt="" width={'200px'} />
           {/* <Typography variant='h5' component='h4'>
             <h1 >Mundialito Quizz</h1>
           </Typography> */}
