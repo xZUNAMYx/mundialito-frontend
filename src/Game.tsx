@@ -3,6 +3,7 @@ import { useQuestionStore } from "./stores/questions.store";
 import { type Question as QuestionType} from './types';
 import { ArrowBackIosNew, ArrowForwardIos } from "@mui/icons-material";
 import { Footer } from "./Footer";
+// import { useEffect } from "react";
 
 //si esta fuera del componente se crea una sola vez la funcion en vez de cada vez por componente
 const getBackGroundColor = (info: QuestionType, index: number) => {
@@ -19,6 +20,12 @@ const getBackGroundColor = (info: QuestionType, index: number) => {
 
     return 'transparent';
 }
+
+// useEffect(() => {
+//     // @ts-ignore
+//     getBackGroundColor(info);
+//     // console.log({ getBackGroundColor(info);})
+// }, []);
 
 const Question = ({ info } : { info: QuestionType }) => {
     const selectAnswer = useQuestionStore(state => state.selectAnswer);
@@ -43,9 +50,9 @@ const Question = ({ info } : { info: QuestionType }) => {
                 { info.answers.map(( answer, index) =>(
                     <ListItem key={ index } disablePadding divider sx={{ backgroundColor: 'white'}}>
                         <ListItemButton 
+                            sx={{ backgroundColor: getBackGroundColor(info, index) }}
                             disabled={info.userSelectedAnswer != null} //al desactivar el boton
                             onClick={ createHandleClick(index) }
-                            sx={{ backgroundColor: getBackGroundColor(info, index) }}
                         >
                             <ListItemText primary={ answer } sx={{ textAlign: 'center' }} />
                         </ListItemButton>
