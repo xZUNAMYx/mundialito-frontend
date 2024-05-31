@@ -2,6 +2,8 @@ import { Card, List, ListItem, ListItemButton, ListItemText, Typography } from "
 import { useChampionShipStore } from "./stores/teams.tore";
 import {type Team as TeamType} from './types';
 import { useEffect } from "react";
+import banderaBrasil from '../src/assets/banderabrasil.png';
+import banderaArgentina from '../src/assets/bandera argentina.png';
 
 const Team = ({ info } : { info: TeamType }) => { //TODO: de tipo Team
     const selectTeam = useChampionShipStore(state => state.selectTeam);
@@ -56,8 +58,16 @@ export const Teams = () => {
 
     return (
         <>
-            <h3>Puntuación de {teamInfo1.name}: {teamInfo1.points}</h3> 
-            <h3>Puntuación de {teamInfo2.name}: {teamInfo2.points}</h3> 
+            <Card style={{textAlign: 'center', marginTop: '20px'}}>
+                <h3>Goles de {teamInfo1.name}: {teamInfo1.points}</h3>
+                <img src={ banderaBrasil } width={100} alt="" />
+            </Card> 
+                <h2>VS</h2>
+            <Card style={{textAlign: 'center', marginBottom: '50px'}}>
+                <h3>Goles de {teamInfo2.name}: {teamInfo2.points}</h3> 
+                <img src={ banderaArgentina } width={100} alt="" />
+            </Card>
+            
             <hr /> 
             <Team info={ teamInfo1 } />
             

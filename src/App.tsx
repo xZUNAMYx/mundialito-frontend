@@ -16,6 +16,13 @@ function App() {
   const torneo = useChampionShipStore(state => state.onTorneo);
 
 
+  //TODO: para ser el  que mira el torneo sin estar en equipos
+  const equipo = useChampionShipStore( state => state.nombreEquipo);
+  // let mirarTorneo = () => {
+  //   <Teams />
+  // };
+
+
   console.log(questions);
 
   // const { getQuestionStore} = useQuestionBackend();
@@ -36,10 +43,13 @@ function App() {
         </Stack>
 
         {torneo === false && <StartChampionship />}
-        {torneo === true && <Teams />}
+        {equipo === 3 && torneo === true && <Teams />}
 
-        {questions.length === 0 && <Start />}
-        {questions.length > 0 && <Game />}
+        {torneo === true && questions.length === 0 && <Start />}
+
+        {equipo === 0 && questions.length > 0 && <Game />}
+        {equipo === 1 && questions.length > 0 && <Game />}
+        {equipo === 3 && questions.length > 0 && <Game />}
 
       
       </Container>

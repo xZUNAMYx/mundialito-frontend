@@ -33,6 +33,8 @@ const getBackGroundColor = (info: QuestionType, index: number) => {
 
 const Question = ({ info } : { info: QuestionType }) => {
     const selectAnswer = useQuestionStore(state => state.selectAnswer);
+    const imagenPregunta = info.code.toString();
+    console.log(imagenPregunta.toString());
 
     const createHandleClick = (answerIndex: number) => () =>{
         selectAnswer(info.id, answerIndex);
@@ -41,14 +43,15 @@ const Question = ({ info } : { info: QuestionType }) => {
     }
 
     return (
-        <Card variant="outlined" sx={{bgcolor:'white', p: 1, textAlign: 'left'}}>
+        <Card variant="outlined" sx={{bgcolor:'white', p: 1, textAlign: 'center'}}>
             <Typography variant="h5" sx={{textAlign: 'center', fontWeight: 'bold'}}>
                 { info.question}
             </Typography>
             <hr />
             
-            {info.code}
-
+            <img src={ imagenPregunta } alt="" />
+            {/* {imagenPregunta} */}
+            
             <List sx={{ bgcolor: 'white' }} disablePadding >
             <hr />
                 { info.answers.map(( answer, index) =>(
@@ -64,29 +67,6 @@ const Question = ({ info } : { info: QuestionType }) => {
                 ))}
             </List>
         </Card>
-        // <div>
-        //     <Typography variant="h5" sx={{textAlign: 'center', fontWeight: 'bold'}}>
-        //         { info.question}
-        //     </Typography>
-        //     <hr />
-            
-        //     {info.code}
-
-        //     <List sx={{ bgcolor: 'white' }} disablePadding >
-        //     <hr />
-        //         { info.answers.map(( answer, index) =>(
-        //             <ListItem key={ index } disablePadding divider sx={{ backgroundColor: 'white'}}>
-        //                 <ListItemButton 
-        //                     disabled={info.userSelectedAnswer != null} //al desactivar el boton
-        //                     onClick={ createHandleClick(index) }
-        //                     sx={{ backgroundColor: getBackGroundColor(info, index) }}
-        //                 >
-        //                     <ListItemText primary={ answer } sx={{ textAlign: 'center' }} />
-        //                 </ListItemButton>
-        //             </ListItem>
-        //         ))}
-        //     </List>
-        // </div>
     )
 }
 
